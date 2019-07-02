@@ -1,0 +1,30 @@
+﻿<div style="margin-left:30px;width:500px">
+    <h3>List of Players</h3>
+    {{message}}
+
+    <br />
+    <a href="#/AddPlayer" class="btn btn-primary">Add Player</a>
+    <br/>
+    <br/>
+    <table class="table table-bordered">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Club</th>
+            <th>Country</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="player in listPlayers">
+            <td>{{$index+1}}</td>
+            <td>{{player.Name}}</td>
+            <td>{{player.Club}}</td>
+            <td>{{player.Country}}</td>
+            <td>{{player.Age}}</td>
+            <td>
+                <a href="#/EditPlayer/{{player.PlayerId}}" class="btn btn-info">Edit</a>
+                <a href="#/" ng-click="DeletePlayer(player.PlayerId,$index)" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
